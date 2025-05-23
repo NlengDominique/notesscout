@@ -21,7 +21,7 @@ function abort($code = Response::NOT_FOUND):void
 
     http_response_code($code);
 
-    require "./views/{$code}.php";
+    require  base_path("views/{$code}.php");
 
     die();
 }
@@ -46,4 +46,14 @@ function authorize($condition,$status = Response::FORBIDDEN ){
     }
 }
 
+function base_path($path)
+{
+    return BASE_PATH . $path;
+}
 
+function view($path,$attr = []){
+
+    extract($attr);
+
+    require base_path('views/' .$path);
+}
