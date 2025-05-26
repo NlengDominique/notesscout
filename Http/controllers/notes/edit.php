@@ -1,9 +1,11 @@
 <?php
 
 
-$config = require base_path('config.php');
+use Core\App;
+use Core\Database;
 
-$db = new Database($config['database']);
+
+$db = App::resolve(Database::class);
 
 $currentUser = 1;
 
@@ -16,7 +18,10 @@ $note = $db->query($sql, [
 authorize($note->user_id === $currentUser);
 
 
-view('notes/show.view.php',[
-    'heading' => 'Note',
-    'note' => $note
+
+view('notes/edit.view.php', [
+
+    'heading' => 'Update a note',
+    'errors' => [],
+    'note' => $note,
 ]);

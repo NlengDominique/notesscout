@@ -1,0 +1,27 @@
+{
+    "name": "lucasnleng/notesscout",
+    "authors": [
+        {
+            "name": "NlengDominique",
+            "email": "luqnleng5@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/collections": "^12.15"
+    },
+
+    "autoload-dev": {
+    "psr-4": {
+        "Tests\\": "tests/",
+        "Core\\": "Core/"
+    }
+},
+    "require-dev": {
+        "pestphp/pest": "^3.8"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
